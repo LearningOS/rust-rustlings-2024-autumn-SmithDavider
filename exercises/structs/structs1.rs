@@ -5,33 +5,35 @@
 // Execute `rustlings hint structs1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 
 struct ColorClassicStruct {
-  pub red: u8,
-  pub green: u8,
-  pub blue: u8,
+    pub red: i32,
+    pub green: i32,
+    pub blue: i32,
 }
 
-struct ColorTupleStruct(u8, u8, u8);
-
+struct ColorTupleStruct(pub i32, pub i32, pub i32);
 
 #[derive(Debug)]
 struct UnitLikeStruct;
 
+
 #[cfg(test)]
 mod tests {
+    
     use super::*;
 
     #[test]
     fn classic_c_structs() {
         // TODO: Instantiate a classic c struct!
-        let green= ColorClassicStruct{
+        let green = ColorClassicStruct {
             red: 0,
             green: 255,
-            blue: 0 
-    };
+            blue: 0,
+        };
+
  
         assert_eq!(green.red, 0);
         assert_eq!(green.green, 255);
@@ -41,12 +43,14 @@ mod tests {
     #[test]
     fn tuple_structs() {
         // TODO: Instantiate a tuple struct!
-        let green= ColorTupleStruct(0, 255, 0);
-        assert_eq!(green.red, 0);
-        assert_eq!(green.green, 255);
-        assert_eq!(green.blue, 0);
-    }
-
+        let green = ColorTupleStruct(0, 255, 0);
+          
+        assert_eq!(green.0, 0);
+        assert_eq!(green.1, 255);
+        assert_eq!(green.2, 0);
+        
+}
+      
     #[test]
     fn unit_structs() {
         // TODO: Instantiate a unit-like struct!
